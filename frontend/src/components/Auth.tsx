@@ -23,9 +23,9 @@ export  const Auth = ({type}:{type:"signup" | "signin"})=>{
                     <div className="mt-6">
                     <LabelledInput label = "Name" placeholder="Enter Your Name" onChange={(e)=>{
                     setPostInputs(c=>({...c,name:e.target.value}))}} />
-                    <LabelledInput label = "Email" placeholder="Enter Your Email" onChange={(e)=>{
+                    <LabelledInput label = "Email" placeholder="something@gmail.com" onChange={(e)=>{
                     setPostInputs(c=>({...c,name:e.target.value}))}} />
-                    <LabelledInput label = "Password" placeholder="Enter Your Password" onChange={(e)=>{
+                    <LabelledInput label = "Password" placeholder="*********" onChange={(e)=>{
                     setPostInputs(c=>({...c,name:e.target.value}))}} />
                     </div> 
                 </div>
