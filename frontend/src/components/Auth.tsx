@@ -18,9 +18,11 @@ export  const Auth = ({type}:{type:"signup" | "signin"})=>{
             const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signin" ? "signin" : "signup"}`,postInputs)
             const jwt = response.data;
             localStorage.setItem("token",jwt);
+            console.log(jwt);
             navigate("/blogs");
         }catch(e){
             console.log(e);
+            alert(e);
         }
     }
 
@@ -39,9 +41,9 @@ export  const Auth = ({type}:{type:"signup" | "signin"})=>{
                     {type === "signup" ? <LabelledInput label = "Name" type = "text" placeholder="Enter Your Name" onChange={(e)=>{
                     setPostInputs(c=>({...c,name:e.target.value}))}} /> : null}
                     <LabelledInput label = "Email" type = "email" placeholder="something@gmail.com" onChange={(e)=>{
-                    setPostInputs(c=>({...c,name:e.target.value}))}} />
+                    setPostInputs(c=>({...c,email:e.target.value}))}} />
                     <LabelledInput label = "Password" type = "password" placeholder="*********" onChange={(e)=>{
-                    setPostInputs(c=>({...c,name:e.target.value}))}} />
+                    setPostInputs(c=>({...c,password:e.target.value}))}} />
                     </div> 
                     <div>
                     <button onClick={sendRequest} type="submit" className="mt-6 flex w-full justify-center rounded-md bg-gray-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{type === "signin" ? "Log In" : "Sign up "}</button>
