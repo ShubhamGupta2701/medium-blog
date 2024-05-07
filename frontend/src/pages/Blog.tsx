@@ -1,5 +1,5 @@
 export const Blog = ()=>{
     return <div>
-        Blog
+        Blogs
     </div>
 }
