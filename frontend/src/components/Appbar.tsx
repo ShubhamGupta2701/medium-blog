@@ -6,7 +6,7 @@ export const Appbar = () => {
             Medium Bloging
         </div>
         <div>
-            <Avatar name={"Shubham Gupta"} size={8}/>
+            <Avatar name={"Shubham Gupta"} size={"max"}/>
         </div>
     </div>
 }

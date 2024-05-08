@@ -36,9 +36,9 @@ export const BlogCard = ({authorName,title,content,publishDate}:BlogcardProps) =
     </div>
 }
 
-export function Avatar({name,size=6}:{name : string,size?:number}){
+export function Avatar({name,size="normal"}:{name : string,size?:string}){
     return <div>
-        <div className={`relative inline-flex items-center justify-center w-${size} h-${size} overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600`}>
+        <div className={`relative inline-flex items-center justify-center ${size==="normal" ? "h-6 w-6": "h-8 w-8"}  overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600`}>
             <span className="font-medium text-gray-600 dark:text-gray-300">{name[0]}</span>
         </div>
     </div>
