@@ -20,6 +20,7 @@ export  const Auth = ({type}:{type:"signup" | "signin"})=>{
             localStorage.setItem("token",jwt);
             console.log(jwt);
             navigate("/blogs");
+            alert("successfully login")
         }catch(e){
             console.log(e);
             alert(e);
