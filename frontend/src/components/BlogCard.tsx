@@ -8,22 +8,44 @@ interface BlogcardProps{
 
 export const BlogCard = ({authorName,title,content,publishDate}:BlogcardProps) =>{
     return <div>
-        <div>
-            <div>
-                {authorName}
+        <div className="border-b mt-6">
+            <div className="flex">
+                <div className="flex justify-center flex-col">
+                    <Avatar name = {authorName}/>
+                </div>
+                <div className="font-medium pl-2 text-base flex justify-center flex-col">
+                    {authorName}
+                </div>
+                <div className="flex justify-center flex-col pl-2">
+                    <Circle/>
+                </div>
+                <div className="text-slate-500 pl-2 text-sm flex justify-center flex-col">
+                    {publishDate}
+                </div>
+            </div>    
+            <div className="font-bold text-2xl">
+                {title}
             </div>
             <div>
-                {publishDate}
+                {content.slice(0,100) + "...."}
+            </div>
+            <div className="mt-5 text-slate-500 mb-2">
+                {`${Math.ceil(content.length/100)} minute's Read`}
             </div>
         </div>
-        <div>
-            {title}
+    </div>
+}
+
+function Avatar({name}:{name : string}){
+    return <div>
+        <div className="relative inline-flex items-center justify-center w-6 h-6 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+            <span className="font-medium text-gray-600 dark:text-gray-300">{name[0]}</span>
         </div>
-        <div>
-            {content.slice(0,100) + "...."}
-        </div>
-        <div>
-            {`${Math.ceil(content.length/100)} minute's Read`}
-        </div>
+    </div>
+}
+
+function Circle(){
+    return <div className="h-1 w-1 rounded-full bg-slate-300">
+
     </div>
 }
