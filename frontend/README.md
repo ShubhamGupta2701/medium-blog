@@ -32,3 +32,7 @@ export default {
 
 ## Medium - Frontend 
 - This is the frontend for the medium - bloging app creat using vite - typescript
+
+- auth token - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2OWZiOTVhLWJhNjEtNDdjOC1iYmIzLTU1M2I1YmZhYTNhNiJ9.BYkjvzcXG62ghSzKRlZ4GG35r_SEIq0dzDnp5yYsbN4
+
+- [object Object]
