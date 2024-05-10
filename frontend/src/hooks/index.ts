@@ -31,5 +31,4 @@ export const useBlogs = ()=>{
     }
 }
 
-
 // we have to add more funtionality to it

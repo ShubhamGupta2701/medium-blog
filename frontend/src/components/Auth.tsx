@@ -15,12 +15,15 @@ export  const Auth = ({type}:{type:"signup" | "signin"})=>{
 
     async function sendRequest(){
         try{
-            const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signin" ? "signin" : "signup"}`,postInputs)
-            const jwt = response.data;
+            const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" : "signin"}`, postInputs);
+console.log('Response:', response.data);
+
+            const jwt = response.data.token;
+            // console.log(jwt);
             localStorage.setItem("token",jwt);
-            console.log(jwt);
             navigate("/blogs");
             alert("successfully login")
+            // console.log(jwt);
         }catch(e){
             console.log(e);
             alert(e);
