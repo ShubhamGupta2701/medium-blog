@@ -30,3 +30,6 @@ export const useBlogs = ()=>{
         blogs
     }
 }
+
+
+// we have to add more funtionality to it
