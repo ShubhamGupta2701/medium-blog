@@ -54,7 +54,7 @@ blogRouter.get('/bulk', async (c) => {
 	return c.json(posts);
 })
 
-blogRouter.get('blog/:id', async (c) => {
+blogRouter.get('/:id', async (c) => {
 	const id = c.req.param('id');
 	const prisma = new PrismaClient({
 		datasourceUrl: c.env?.DATABASE_URL	,
@@ -63,6 +63,16 @@ blogRouter.get('blog/:id', async (c) => {
 	const post = await prisma.blog.findUnique({
 		where: {
 			id : Number(id)
+		},
+		select:{
+			id:true,
+			content :true,
+			title : true,
+			author : {
+				select : {
+					name : true
+				}
+			}
 		}
 	});
 
