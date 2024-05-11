@@ -13,6 +13,6 @@ export const Blog = ()=>{
         </div>
     }
     return <div>
-        <UniqueBlog />
+        <UniqueBlog blog={blog}/>
     </div>
 }
