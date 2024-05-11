@@ -1,13 +1,22 @@
 import { Appbar } from "../components/Appbar"
 import { BlogCard } from "../components/BlogCard"
+import { LooadingSkeleton } from "../components/LoadingSkeleton";
 import { useBlogs } from "../hooks"
 
 export const Blogs = () =>{
     const {loading,blogs} = useBlogs();
 
     if(loading){
-        return <div>
-            laoding...!!!
+        return <div className="font-serif ">
+            <Appbar/>
+            <div className="flex justify-center">
+                <div >
+                    <LooadingSkeleton/>
+                    <LooadingSkeleton/>
+                    <LooadingSkeleton/>
+                    <LooadingSkeleton/>
+                </div>
+            </div>
         </div>
     }
 

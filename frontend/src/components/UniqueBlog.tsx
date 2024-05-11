@@ -7,14 +7,14 @@ export const UniqueBlog = ({blog} : {blog:Blog}) => {
         <Appbar />
         <div className="grid grid-cols-12 px-10 w-full pt-14 max-w-screen-2xl">
             <div className="col-span-8">
-                <div className="text-3xl font-extrabold">
+                <div className="text-5xl font-extrabold">
                     {blog.title}
                 </div>
-                <div className="text-xl mt-4">
+                <div className="text-xl mt-8">
                     {blog.content}
                 </div>
             </div>
-            <div className="col-span-4 pl-4">
+            <div className="col-span-4 pl-8">
                 <div className="text-lg mb-2 text-slate-500">
                     Author
                 </div>
