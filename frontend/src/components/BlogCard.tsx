@@ -10,7 +10,7 @@ interface BlogcardProps{
 
 export const BlogCard = ({id,authorName,title,content,publishDate}:BlogcardProps) =>{
     return <Link to= {`/blog/${id}`}>
-        <div className="border-b mt-6 w-screen max-w-screen-md cursor-pointer">
+        <div className="border-b mt-6 w-screen max-w-screen-sm cursor-pointer">
             <div className="flex">
                 <div className="flex justify-center flex-col">
                     <Avatar name = {authorName}/>
