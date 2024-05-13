@@ -18,7 +18,7 @@
 - Tailwind - for CSS and Styling
 
 
-## What has done till now
+## What has been done till now
 
 - Create Signup and Signin Components / Pages
 - Handle User Authentication using JWT Auuthentication and LocalStorage
