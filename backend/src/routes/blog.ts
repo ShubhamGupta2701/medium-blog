@@ -1,9 +1,8 @@
-
-import { PrismaClient } from "@prisma/client/edge";
-import { withAccelerate } from "@prisma/extension-accelerate";
-import { Hono } from "hono";
-import { verify } from "hono/jwt";
-import { createBlogInput,updateBlogInput } from "@shubhamgupta2701/medium-common";
+import { PrismaClient } from "@prisma/client/edge"; //  to perfrom operations on db
+import { withAccelerate } from "@prisma/extension-accelerate";  // to accelerate speed of queries on db
+import { Hono } from "hono"; // backend ke liye
+import { verify } from "hono/jwt";  // to authenticate users
+import { createBlogInput,updateBlogInput } from "@shubhamgupta2701/medium-common";  // zod validtions
 
 export const blogRouter = new Hono<{
     Bindings: {
@@ -15,8 +14,8 @@ export const blogRouter = new Hono<{
     }
 }>();
 
-blogRouter.use("/*",async(c,next)=>{
-	const authHeader = c.req.header("authorization") || "";
+blogRouter.use("/*",async(c,next)=>{   //middleware for all routes
+	const authHeader = c.req.header("authorization") || "";  // to get jwt token from authorization
 	try{
 		const user = await verify(authHeader,c.env.JWT_SECRET);
 		if(user){

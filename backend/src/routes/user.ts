@@ -13,17 +13,19 @@ export const userRouter = new Hono<{
 }>();
 
 userRouter.post('/signup', async (c) => {
-    const body = await c.req.json();
-    const { success } =signupInput.safeParse(body);
+    const body = await c.req.json(); // inputs context se nikal li
+    const { success } =signupInput.safeParse(body); // yha pr zod inputs validate krega 
     
-    if(!success){
+    if(!success){    // check kr rha h ki inputs sahi ayi h ya nhi 
       c.status(411);
       return c.json({
         message : "Inputs are wrong"
       })
     }
-    const prisma = new PrismaClient({
-      datasourceUrl: c.env?.DATABASE_URL,
+
+    // yha tk agya mtlb inputs validate h mtlb correct type ki h
+    const prisma = new PrismaClient({ // new client to access db 
+      datasourceUrl: c.env?.DATABASE_URL,  // 
     }).$extends(withAccelerate());
   
     
@@ -35,10 +37,10 @@ userRouter.post('/signup', async (c) => {
       },
     });
     console.log(user);
-    const token = await sign({ id: user.id }, c.env.JWT_SECRET)
+    const token = await sign({ id: user.id }, c.env.JWT_SECRET) // cross verification ke liye token 
     console.log(token)
     return c.json({
-      jwt: token
+      jwt: token // return kr rhe h token ko 
     })
 })
   
@@ -57,7 +59,7 @@ userRouter.post('/signin', async (c) => {
     }).$extends(withAccelerate());
 
     
-    const user = await prisma.user.findUnique({
+    const user = await prisma.user.findUnique({  // to find user using inputs
         where: {
             email: body.email,
             password: body.password
