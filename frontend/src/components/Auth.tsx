@@ -31,7 +31,7 @@ console.log('Response:', response.data);
     }
 
     return (
-        <div className="flex justify-center h-screen flex-col">
+        <div className="flex justify-center h-screen flex-col font-mono">
             <div className="flex justify-center">
                 <div>
                     <div className="text-4xl font-extrabold px-10">
@@ -44,7 +44,7 @@ console.log('Response:', response.data);
                     <div className="mt-6">
                     {type === "signup" ? <LabelledInput label = "Name" type = "text" placeholder="Enter Your Name" onChange={(e)=>{
                     setPostInputs(c=>({...c,name:e.target.value}))}} /> : null}
-                    <LabelledInput label = "Email" type = "email" placeholder="something@gmail.com" onChange={(e)=>{
+                    <LabelledInput label = "Email" type = "email" placeholder="example@gmail.com" onChange={(e)=>{
                     setPostInputs(c=>({...c,email:e.target.value}))}} />
                     <LabelledInput label = "Password" type = "password" placeholder="*********" onChange={(e)=>{
                     setPostInputs(c=>({...c,password:e.target.value}))}} />

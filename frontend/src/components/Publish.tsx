@@ -33,7 +33,7 @@ export const Publish = () => {
                     });
                     navigate(`/blog/${response.data.id}`)
                 }} type="submit" className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 ">
-                    Post comment
+                    Post Blog
                 </button>
                 
             </div>
@@ -46,7 +46,7 @@ function TextEditor({ onChange }: {onChange : (e : ChangeEvent<HTMLTextAreaEleme
     return <form>
         <div className="w-full mb-4 border border-gray-300 rounded-lg bg-gray-50 ">
             <div className="px-2 py-2 bg-white rounded-lg ">
-                <textarea onChange={onChange} id="comment" rows={8} className="focus:outline-none w-full px-0 text-sm text-gray-900 bg-white border-0" placeholder="Write a comment..." required ></textarea>
+                <textarea onChange={onChange} id="comment" rows={8} className="focus:outline-none w-full px-0 text-sm text-gray-900 bg-white border-0" placeholder="Enter Content for Blog..." required ></textarea>
             </div>
         </div>
     </form>
