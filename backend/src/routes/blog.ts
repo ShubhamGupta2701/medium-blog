@@ -32,9 +32,9 @@ blogRouter.use("/*",async(c,next)=>{   //middleware for all routes
 	
 })
 
-blogRouter.get('/bulk', async (c) => {
-	const prisma = new PrismaClient({
-		datasourceUrl: c.env?.DATABASE_URL	,
+blogRouter.get('/bulk', async (c) => {   // by default yhi chlega 
+	const prisma = new PrismaClient({  
+		datasourceUrl: c.env?.DATABASE_URL	,   // prisma client create kra so that db pr operations perform krva ske
 	}).$extends(withAccelerate());
 	
 	const posts = await prisma.blog.findMany({
@@ -50,7 +50,7 @@ blogRouter.get('/bulk', async (c) => {
 		}
 	});
 
-	return c.json(posts);
+	return c.json(posts);  // context se hi sb return hoga
 })
 
 blogRouter.get('/:id', async (c) => {
@@ -59,7 +59,7 @@ blogRouter.get('/:id', async (c) => {
 		datasourceUrl: c.env?.DATABASE_URL	,
 	}).$extends(withAccelerate());
 	
-	const post = await prisma.blog.findUnique({
+	const post = await prisma.blog.findUnique({   //uniquely find krke return krvana h
 		where: {
 			id : Number(id)
 		},

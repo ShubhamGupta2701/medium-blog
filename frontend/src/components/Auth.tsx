@@ -39,7 +39,7 @@ console.log('Response:', response.data);
                     </div>
                     <div className="text-center text-slate-400">
                         {type === "signin" ? "Don't have an Account" : "Already have an Account"}
-                        <Link className="pl-2 underline" to={type==="signin"?"/signup":"/signin"}>{type === "signin" ? "Sign up" : "Login"}</Link>
+                        <Link className="pl-2 underline" to={type==="signin"?"/":"/signin"}>{type === "signin" ? "Sign up" : "Login"}</Link>
                     </div>
                     <div className="mt-6">
                     {type === "signup" ? <LabelledInput label = "Name" type = "text" placeholder="Enter Your Name" onChange={(e)=>{
