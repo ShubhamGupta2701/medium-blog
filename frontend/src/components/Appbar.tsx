@@ -1,18 +1,27 @@
-import { Link } from "react-router-dom"
-import {Avatar} from "./BlogCard"
+import { Link } from "react-router-dom";
+import logoImg from "../assets/logo.png";
 
-export const Appbar = () => {
-    return <div className="border-b flex justify-between px-10 py-2">
-        <Link to={"/Blogs"} className="text-xl font-semibold font-mono flex flex-col justify-center">
-            Medium Bloging
-        </Link>
-        <div className="flex justify-center mt-2">
-                <Link to = {'/publish'} className="pr-2">
-                    <button type="button" className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ">
-                        Add
-                    </button>
+const Appbar = () => {
+    return (
+        <div className="border-b flex justify-between px-8 py-2 font-mono">
+            {/* Logo and Title */}
+            <Link to={"/Blogs"} className="text-2xl font-semibold flex items-center">
+                <img className="h-8 w-8 mr-2" src={logoImg} alt="logo" />
+                Medium Blogging
+            </Link>
+
+            {/* Navigation Links */}
+            <div className="flex items-center">
+                <Link to={'/publish'} className="btn">
+                    Add
                 </Link>
-            <Avatar name={"Shubham Gupta"} size={"big"}/>
+                <Link to={'/'} className="btn">
+                    Logout
+                </Link>
+            </div>
         </div>
-    </div>
-}
+    );
+};
+
+export default Appbar;
+
