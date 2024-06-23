@@ -1,4 +1,4 @@
-import { Appbar } from "../components/Appbar"
+import { Appbar } from '../components/Appbar'
 import { BlogCard } from "../components/BlogCard"
 import { LooadingSkeleton } from "../components/LoadingSkeleton";
 import { useBlogs } from "../hooks"
