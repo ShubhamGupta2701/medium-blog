@@ -1,13 +1,14 @@
-import axios from "axios"
-import { BACKEND_URL } from "../config"
-import { Appbar } from "./Appbar"
+import axios from "axios";
 import { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL } from "../config";
+import { Appbar } from "./Appbar";
 
-export const Publish = () => {
+export const UpdateBlog = () => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const navigate = useNavigate();
+    
     return <div>
         <Appbar />
         <div className="flex justify-center mt-4 ">
@@ -24,7 +25,7 @@ export const Publish = () => {
                     }}/>
                 </div>
                 <button onClick={async()=>{
-                    const response = await axios.post(`${BACKEND_URL}/api/v1/blog`,{
+                    const response = await axios.put(`${BACKEND_URL}/api/v1/blog`,{
                         title,content
                     },{
                         headers : {
@@ -33,13 +34,12 @@ export const Publish = () => {
                     });
                     navigate(`/blog/${response.data.id}`)
                 }} type="submit" className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 ">
-                    Post Blog
+                    Update Blog
                 </button>
                 
             </div>
         </div>
     </div>
-    
 }
 
 function TextEditor({ onChange }: {onChange : (e : ChangeEvent<HTMLTextAreaElement>)=>void}){

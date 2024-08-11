@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/logo.png';
-import Logout from './Logout'; // Ensure the correct import path
+import {Logout} from './Logout'; // Ensure the correct import path
 
 export const Appbar = () => {
     return (
